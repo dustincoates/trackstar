@@ -12,4 +12,10 @@ integrationsMasterList['google-universal-analytics'] = {
   trackPurchase: function(){},
   trackAction: function(){}
 };
+integrationsMasterList['kissmetrics'] = {
+  trackPageView: function(){},
+  trackPurchase: function(){},
+  trackAction: function(){}
+};
+integrationsMasterList['km'] = integrationsMasterList['kissmetrics'];
 integrationsMasterList['universal-analytics'] = integrationsMasterList['google-universal-analytics'];
