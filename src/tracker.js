@@ -36,24 +36,24 @@ var trackStar = (function(){
     return this;
   }
 
-  TrackStar.prototype.trackPageView = function(opts) {
-    var integrations = this.getIntegrations();
+  function sendFunction (context, functionName, opts) {
+    var integrations = context.getIntegrations();
 
     for (var key in integrations){
       _integrationsMasterList[key][functionName](opts);
     };
   }
 
-  TrackStar.prototype.trackPurchase = function(opts) {
-    var integrations = this.getIntegrations();
+  TrackStar.prototype.trackPageView = function() {
+    sendFunction(this, "trackPageView");
   };
 
-  TrackStar.prototype.trackAction = function(el, opts) {
-    var integrations = this.getIntegrations();
+  TrackStar.prototype.trackConversion = function(){
+    sendFunction(this, "trackConversion");
   };
 
-  Element.prototype.trackAction = function(opts) {
-    window.trackStar.trackAction(this, opts);
+  TrackStar.prototype.trackAction = function(opts){
+    sendFunction(this, "trackAction", opts);
   };
 
   return window.trackStar = TrackStar();
