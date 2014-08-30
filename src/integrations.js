@@ -1,6 +1,4 @@
 var _integrationsMasterList = {};
-_integrationsMasterList['ga'] = _integrationsMasterList['google-analytics'];
-_integrationsMasterList['google'] = _integrationsMasterList['google-analytics'];
 _integrationsMasterList['google-analytics'] = {
   trackPageView: function(){
     _gaq.push(['_trackPageview']);
@@ -10,6 +8,8 @@ _integrationsMasterList['google-analytics'] = {
     _trackEvent(opts.category, opts.action, opts.label, opts.value, opts.nonInteraction);
   }
 };
+_integrationsMasterList['google'] = _integrationsMasterList['google-analytics'];
+_integrationsMasterList['ga'] = _integrationsMasterList['google-analytics'];
 _integrationsMasterList['google-universal-analytics'] = {
   trackPageView: function(){},
   trackPurchase: function(){},
