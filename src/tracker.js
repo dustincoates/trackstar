@@ -20,7 +20,7 @@ var trackStar = (function(){
       for(var key in integrationsObj){
         var val = integrationsObj[key];
         if (integrations.hasOwnProperty(key)) {
-          integrations[key] = integrations[key].concat(val)
+          integrations[key] = integrations[key].concat(val);
         } else {
           integrations[key] = [].concat(val);
         }
