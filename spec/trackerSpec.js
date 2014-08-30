@@ -22,10 +22,10 @@ describe("trackStar", function() {
         it("keeps old integrations and adds new ones", function() {
           var oldIntegrations = {"metric-izer": [1, 2]},
               newIntegrations = {"analytics": [1, 2]},
-              expected = {"analytics": [1, 2], "metric-izer": [1, 2]}
+              expected = {"analytics": [1, 2], "metric-izer": [1, 2]};
 
           trackStar.integrate(oldIntegrations);
-          trackStar.integrate(newIntegrations)
+          trackStar.integrate(newIntegrations);
           expect(trackStar.getIntegrations()).toEqual(expected);
         });
       });
