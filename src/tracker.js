@@ -15,15 +15,12 @@ var trackStar = (function(){
         throw new Error("trackStar requires an Object of integrations");
       }
 
-      if (Object.keys(integrations).length === 0) {
-        integrations = integrationsObj;
-      } else{
-        for(var key in integrationsObj){
-          if (integrationsObj.hasOwnProperty(key)) {
-            var val = integrationsObj[key];
-
-            integrations[key] = [].concat(val);
-          }
+      for(var key in integrationsObj){
+        var val = integrationsObj[key];
+        if (integrations.hasOwnProperty(key)) {
+          integrations[key] = integrations[key].concat(val)
+        } else {
+          integrations[key] = [].concat(val);
         }
       }
 
