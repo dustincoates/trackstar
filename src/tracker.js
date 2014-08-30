@@ -13,8 +13,8 @@ var trackStar = (function(){
     };
 
     this.integrate = function(integrationsObj) {
-      if (Object.prototype.toString.call(integrationsObj) !== "[object Object]") {
-        throw new Error("trackStar requires an Object of integrations");
+      if (Object.prototype.toString.call(integrationsObj) !== '[object Object]') {
+        throw new Error('trackStar requires an Object of integrations');
       }
 
       for(var key in integrationsObj){
@@ -47,15 +47,15 @@ var trackStar = (function(){
   }
 
   TrackStar.prototype.trackPageView = function() {
-    sendFunction(this, "trackPageView");
+    sendFunction(this, 'trackPageView');
   };
 
   TrackStar.prototype.trackConversion = function(){
-    sendFunction(this, "trackConversion");
+    sendFunction(this, 'trackConversion');
   };
 
   TrackStar.prototype.trackAction = function(opts){
-    sendFunction(this, "trackAction", opts);
+    sendFunction(this, 'trackAction', opts);
   };
 
   return window.trackStar = TrackStar();
