@@ -42,10 +42,10 @@ var trackStar = (function(){
   TrackStar.prototype.trackPageView = function(opts) {
     var integrations = this.getIntegrations();
 
-    for (var i = integrations.length - 1; i >= 0; i--) {
-      integrationsMasterList[integrations[i]].trackPageView();
+    for (var key in integrations){
+      _integrationsMasterList[key][functionName](opts);
     };
-  };
+  }
 
   TrackStar.prototype.trackPurchase = function(opts) {
     var integrations = this.getIntegrations();

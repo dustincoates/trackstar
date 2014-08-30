@@ -1,8 +1,7 @@
-
-var integrationsMasterList = {};
-integrationsMasterList['ga'] = integrationsMasterList['google-analytics'];
-integrationsMasterList['google'] = integrationsMasterList['google-analytics'];
-integrationsMasterList['google-analytics'] = {
+var _integrationsMasterList = {};
+_integrationsMasterList['ga'] = _integrationsMasterList['google-analytics'];
+_integrationsMasterList['google'] = _integrationsMasterList['google-analytics'];
+_integrationsMasterList['google-analytics'] = {
   trackPageView: function(){
     _gaq.push(['_trackPageview']);
   },
@@ -11,15 +10,15 @@ integrationsMasterList['google-analytics'] = {
     _trackEvent(opts.category, opts.action, opts.label, opts.value, opts.nonInteraction);
   }
 };
-integrationsMasterList['google-universal-analytics'] = {
+_integrationsMasterList['google-universal-analytics'] = {
   trackPageView: function(){},
   trackPurchase: function(){},
   trackAction: function(){}
 };
-integrationsMasterList['kissmetrics'] = {
+_integrationsMasterList['kissmetrics'] = {
   trackPageView: function(){},
   trackPurchase: function(){},
   trackAction: function(){}
 };
-integrationsMasterList['km'] = integrationsMasterList['kissmetrics'];
-integrationsMasterList['universal-analytics'] = integrationsMasterList['google-universal-analytics'];
+_integrationsMasterList['km'] = _integrationsMasterList['kissmetrics'];
+_integrationsMasterList['universal-analytics'] = _integrationsMasterList['google-universal-analytics'];
