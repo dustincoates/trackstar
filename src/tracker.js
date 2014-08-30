@@ -1,3 +1,5 @@
+'use strict';
+
 var trackStar = (function(){
   function TrackStar() {
     var integrations = {};

@@ -1,3 +1,5 @@
+'use strict';
+
 var _integrationsMasterList = {};
 _integrationsMasterList['google-analytics'] = {
   trackPageView: function(){
