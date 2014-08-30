@@ -18,11 +18,13 @@ var trackStar = (function(){
       }
 
       for(var key in integrationsObj){
-        var val = integrationsObj[key];
-        if (integrations.hasOwnProperty(key)) {
-          integrations[key] = integrations[key].concat(val);
-        } else {
-          integrations[key] = [].concat(val);
+        if (integrationsObj.hasOwnProperty[key]){
+          var val = integrationsObj[key];
+          if (integrations.hasOwnProperty(key)) {
+            integrations[key] = integrations[key].concat(val);
+          } else {
+            integrations[key] = [].concat(val);
+          }
         }
       }
 
@@ -42,8 +44,10 @@ var trackStar = (function(){
     var integrations = context.getIntegrations();
 
     for (var key in integrations){
-      _integrationsMasterList[key][functionName](opts);
-    };
+      if(integrations.hasOwnProperty(key)){
+        _integrationsMasterList[key][functionName](opts);
+      }
+    }
   }
 
   TrackStar.prototype.trackPageView = function() {
